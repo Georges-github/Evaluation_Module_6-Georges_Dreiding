@@ -34,9 +34,9 @@
                         <option value="admin" <?php echo $data_form["role"] == "admin" ? "selected" : "" ?>>admin</option>
                     </select>
                 </div>
-                <div class="d-flex justify-content-start">
-                    <input type="submit" class="btn btn-info btn-sm mt-3">
-                </div>
+                <div class="d-flex justify-content-start mt-4">
+                    <input type="submit" class="btn btn-info btn-sm">
+                    <a href="<?php echo( URL_SITE ); ?>index.php?page=etudiants" class="btn btn-info btn-sm ms-3">Retour à liste des étudiants</a>                </div>
             </form>
             <?php foreach($erreurs as $erreur) : ?>
                 <div class="alert bg-warning mt-3"><?php echo $erreur ?></div>

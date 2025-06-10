@@ -2,28 +2,29 @@
 
 session_start();
 
+// define( "URL_SITE" , "http://192.168.33.10/Evaluation_Module_6/" );
+define( "URL_SITE" , "http://localhost/Evaluation_Module_6/" );
+
 $page = "";
 
 // http://192.123.123.123/index.php?page=home
-if ( $_GET[ "page" ]  ??  ! empty( $_GET[ "page" ] ) ) {
-    $page = $_GET[ "page" ];
-} else {
-    $page = "/";
-}
+$page = ( isset($_GET[ "page" ] ) && $_GET["page"] !== '' ) ? $_GET[ "page" ] : "/";
 
 $routes = [
-    "/"                => [ "etudiants" , "FrontController" ] ,
-    "etudiants"        => [ "etudiants" , "FrontController" ] ,
-    "etudiant"         => [ "etudiant" , "FrontController" ] ,
-    "supprimer"        => [ "supprimer" , "FrontController" ] ,
-    "nouveau"          => [ "nouveau" , "FrontController" ] ,
-    "modifier"          => [ "modifier" , "FrontController" ]
+    "/"                 => [ "etudiants" , "FrontController" ] ,
+    "etudiants"         => [ "etudiants" , "FrontController" ] ,
+    "etudiant"          => [ "etudiant"  , "FrontController" ] ,
+    "supprimer"         => [ "supprimer" , "FrontController" ] ,
+    "nouveau"           => [ "nouveau"   , "FrontController" ] ,
+    "modifier"          => [ "modifier"  , "FrontController" ]
 ];
 
 require_once( "model/BDD.php" );
 
 require_once( "controller/AbstractController.php" );
+
 require_once( "controller/FrontController.php" );
+
 require_once( "controller/ErreurController.php" );
 
 if ( array_key_exists( $page , $routes ) ) {
@@ -32,17 +33,17 @@ if ( array_key_exists( $page , $routes ) ) {
 
     $classe = $routes[ $page ][ 1 ];
 
-    $p = new $classe();
+    $c = new $classe();
 
     // $params = isset( $_GET[ "id" ] ) ? $_GET[ "id" ] : null;
-    // call_user_func( [ $p , $methode ] , $params );
+    // call_user_func( [ $c , $methode ] , $params );
 
-    call_user_func( [ $p , $methode ] );
+    call_user_func( [ $c , $methode ] );
 
 } else {
 
-    $p = new ErreurController();
+    $c = new ErreurController();
 
-    $p->erreur( 404 , "La page demandée n'existe pas." );
+    $c->erreur( 404 , "La page demandée n'existe pas." );
 
 }

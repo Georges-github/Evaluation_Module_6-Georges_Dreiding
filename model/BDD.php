@@ -10,7 +10,7 @@ class BDD {
 
         $dsn = "mysql:host=localhost;dbname=module6_GDG;charset=utf8mb4";
         $login = "root";
-        $password = "root";
+        $password = "";
 
         $this->connexion = new PDO( $dsn , $login , $password );
 
@@ -42,6 +42,7 @@ class BDD {
 
         }
 
+        // Si SELECT.
         return $stmt->fetchAll( PDO::FETCH_ASSOC );
     }
     

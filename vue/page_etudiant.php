@@ -36,7 +36,7 @@
 
     <hr>
 
-    <a href="<?php echo( $URL_SITE ); ?>index.php?page=etudiants" class="btn btn-info btn-sm">Retour à liste des étudiants</a>
+    <a href="<?php echo( URL_SITE ); ?>index.php?page=etudiants" class="btn btn-info btn-sm">Retour à liste des étudiants</a>
 
     <br><br><br>
 

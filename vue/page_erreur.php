@@ -4,6 +4,6 @@
 
     <h2><?php echo( $contenu[ "message" ] ); ?></h2>
 
-    <p><a href="<?php echo( $URL_SITE ); ?>" class="btn btn-primary">Retourner à la page d'accueil.</a></p>
+    <p><a href="<?php echo( URL_SITE ); ?>" class="btn btn-primary">Retourner à la page d'accueil.</a></p>
 
 </main>

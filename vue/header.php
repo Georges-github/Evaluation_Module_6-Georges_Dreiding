@@ -10,7 +10,7 @@
   <body>
   
   <!-- ?php $URL_SITE = "http://192.168.56.10/Jour_13_13022025/"; ? -->
-  <?php $URL_SITE = "http://192.168.33.10/Evaluation_Module_6/"; ?>
+  <!--?php $URL_SITE = "http://192.168.33.10/Evaluation_Module_6/"; ?-->
   <!--?php $URL_SITE = "http://192.168.56.10/evaluation_module_6/"; ?-->
 
   <header class="bg-primary">
@@ -20,7 +20,7 @@
         </span>
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a href="<?php echo( $URL_SITE ); ?>index.php?page=etudiants" class="btn btn-info btn-sm">Liste des étudiants</a>
+                <a href="<?php echo( URL_SITE ); ?>index.php?page=etudiants" class="btn btn-info btn-sm">Liste des étudiants</a>
             </li>
         </ul>
     </nav>

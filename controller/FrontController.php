@@ -147,7 +147,7 @@ class FrontController extends AbstractController {
                 "role" => ( $role === "admin" ? 1 : 0 )
             ] );
 
-            header( "Location: " . $URL_SITE . "index.php?page=etudiants" );
+            header( "Location: " . URL_SITE . "index.php?page=etudiants" );
             die();
         }
 
@@ -257,7 +257,7 @@ class FrontController extends AbstractController {
             ] );
 
             if ( $ret === 1  ||  $ret === 0 ) {
-                header( "Location: " . $URL_SITE . "index.php?page=etudiants" );
+                header( "Location: " . URL_SITE . "index.php?page=etudiants" );
                 die();    
             } else {
                 $erreurs[] = "Problème de mise à jour de la BD.";
